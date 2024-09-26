@@ -1,11 +1,11 @@
 // Selecciona los elementos del DOM.
-const inputRojo = document.getElementById('rojo');
-const inputVerde = document.getElementById('verde');
-const inputAzul = document.getElementById('azul');
+const inputRojo = document.getElementById("rojo");
+const inputVerde = document.getElementById("verde");
+const inputAzul = document.getElementById("azul");
 
-const textoRojo = document.getElementById('texto-rojo');
-const textoVerde = document.getElementById('texto-verde');
-const textoAzul = document.getElementById('texto-azul');
+const textoRojo = document.getElementById("texto-rojo");
+const textoVerde = document.getElementById("texto-verde");
+const textoAzul = document.getElementById("texto-azul");
 
 // Valores iniciales para definir el color RGB.
 let rojo = inputRojo.value;
@@ -20,22 +20,30 @@ textoAzul.textContent = azul;
 // Función para actualizar el color de fondo de la página.
 function actualizarColor(rojo, verde, azul) {
   // Completa esta función para cambiar el color de fondo.
+  const bgColor = `rgb(${rojo}, ${verde}, ${azul})`;
+  document.body.style.backgroundColor = bgColor;
 }
 
 // Agrega un event listener para el input de Rojo.
-inputRojo.addEventListener('change', (e) => {
+inputRojo.addEventListener("change", (e) => {
   // Actualiza el valor de la variable y el texto.
   // Llama a la función para actualizar el color de fondo.
+  textoRojo.textContent = e.target.value;
+  actualizarColor(inputRojo.value, inputVerde.value, inputAzul.value);
 });
 
 // Agrega un event listener para el input de Verde.
-inputVerde.addEventListener('change', (e) => {
+inputVerde.addEventListener("change", (e) => {
   // Actualiza el valor de la variable y el texto.
   // Llama a la función para actualizar el color de fondo.
+  textoVerde.textContent = e.target.value;
+  actualizarColor(inputRojo.value, inputVerde.value, inputAzul.value);
 });
 
 // Agrega un event listener para el input de Azul.
-inputAzul.addEventListener('change', (e) => {
+inputAzul.addEventListener("change", (e) => {
   // Actualiza el valor de la variable y el texto.
   // Llama a la función para actualizar el color de fondo.
+  textoAzul.textContent = e.target.value;
+  actualizarColor(inputRojo.value, inputVerde.value, inputAzul.value);
 });
